@@ -1,15 +1,11 @@
 package kg.megacom;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import kg.megacom.enums.PhoneColor;
 import kg.megacom.enums.PhoneType;
 import kg.megacom.models.Gift;
 import kg.megacom.models.Phone;
 
-import java.awt.image.RGBImageFilter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -61,6 +57,16 @@ public class Main {
                 }
     ).collect(Collectors.toList());
         System.out.println(gifts);
+
+
+
+        Map<Phone, String> phoneGift = new LinkedHashMap<>();
+        for(int i = 0; i < gifts.size(); i++){
+            phoneGift.put(phones.get(i), gifts.get(i).getName());
+        }
+        for(Map.Entry entry: phoneGift.entrySet()){
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
 
         System.out.println("Filter Method --- find PhoneCollectFrom where length's == 10 ");
         List<String> PhoneCollectedFrom = Arrays.asList("TayWan","Сalifornia","India","China","Singapore","Japan","Switzerland");

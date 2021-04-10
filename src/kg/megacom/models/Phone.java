@@ -42,5 +42,12 @@ public class Phone {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "phoneType=" + phoneType +
+                ", phoneColor=" + phoneColor +
+                ", price=" + price +
+                '}';
+    }
 }
